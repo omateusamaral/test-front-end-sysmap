@@ -3,13 +3,13 @@ import { GridColDef } from "@mui/x-data-grid";
 import { User } from "../../api";
 import { Table } from "../common/Table";
 
-interface UsersProps {
+interface UserTableProps {
   data: User[] | undefined;
   loading: boolean;
   setSelectedIds: React.Dispatch<React.SetStateAction<string[]>>;
 }
 const columns: GridColDef<User>[] = [
-  { field: "id", headerName: "ID", flex: 1, hide: true },
+  { field: "id", headerName: "Id", flex: 1, hide: true },
   { field: "name", headerName: "Name", flex: 1 },
   { field: "username", headerName: "Last Name", flex: 1 },
   { field: "email", headerName: "Email", flex: 1 },
@@ -20,7 +20,11 @@ const columns: GridColDef<User>[] = [
     flex: 1,
   },
 ];
-export function Users({ data, loading, setSelectedIds }: UsersProps) {
+export function UserTableProps({
+  data,
+  loading,
+  setSelectedIds,
+}: UserTableProps) {
   return (
     <Grid container>
       <Grid item xs={12} m={2}>

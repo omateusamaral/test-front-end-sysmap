@@ -17,7 +17,6 @@ export function ErrorDialog({
   customMessage,
   title,
 }: ErrorDialogProps) {
-  console.log(Boolean(error?.message));
   return (
     <Dialog
       open={Boolean(error)}

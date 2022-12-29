@@ -1,9 +1,9 @@
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridValidRowModel } from "@mui/x-data-grid";
 
 interface TableProps {
-  rows: unknown[];
+  rows: GridValidRowModel[];
   columns: GridColDef<any>[];
-  loading?: boolean;
+  loading: boolean;
   setSelectedIds: React.Dispatch<React.SetStateAction<string[]>>;
 }
 export function Table({ rows, columns, loading, setSelectedIds }: TableProps) {
@@ -12,7 +12,7 @@ export function Table({ rows, columns, loading, setSelectedIds }: TableProps) {
       <DataGrid
         rows={rows}
         columns={columns}
-        pageSize={5}
+        pageSize={20}
         rowsPerPageOptions={[5]}
         getRowId={(row) => row.id}
         checkboxSelection

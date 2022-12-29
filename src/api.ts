@@ -27,20 +27,67 @@ export interface Company {
   bs: string;
 }
 
+export interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+export interface Comment {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
 function create() {
   return axios.create({
     baseURL: "https://jsonplaceholder.typicode.com",
-    timeout: 1000,
+    timeout: 4000,
   });
 }
 
 export async function listUsers(): Promise<User[]> {
-  const instance = create();
-
   try {
+    const instance = create();
     const response = await instance.get("/users");
     return response.data;
   } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
+export async function getUser(userId: string): Promise<User> {
+  try {
+    const instance = create();
+    const response = await instance.get(`/users/${userId}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
+export async function listPosts(): Promise<Post[]> {
+  try {
+    const instance = create();
+    const response = await instance.get("/posts");
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
+export async function listComments(postId: string): Promise<Comment[]> {
+  try {
+    const instance = create();
+    const response = await instance.get(`posts/${postId}/comments`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
     throw error;
   }
 }
