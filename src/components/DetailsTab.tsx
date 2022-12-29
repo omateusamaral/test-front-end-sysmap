@@ -15,14 +15,14 @@ export function DetailsTab({ selectedIds }: DetailsTabProps) {
     setDetailTab(newValue);
   };
 
-  if (selectedIds.length === 0) {
+  if (selectedIds.length === 0 || selectedIds.length > 1) {
     return <PleaseSelectOne value={detailTab === "detail" ? "user" : "post"} />;
   }
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
       <TabContext value={detailTab}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
+          <TabList onChange={handleChange}>
             <Tab label="Details" value="detail" />
             <Tab label="Comments" value="comment" />
           </TabList>

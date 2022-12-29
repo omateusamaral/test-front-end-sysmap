@@ -24,12 +24,7 @@ export function Header({ onChangeDisplay, value }: HeaderProps) {
         </Typography>
       </Grid>
       <Grid item xs={6} mt={4}>
-        <ToggleButtonGroup
-          value={value}
-          exclusive
-          onChange={onChangeDisplay}
-          aria-label="text alignment"
-        >
+        <ToggleButtonGroup value={value} exclusive onChange={onChangeDisplay}>
           <ToggleButton value="user">
             <PersonRoundedIcon />
           </ToggleButton>
