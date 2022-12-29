@@ -1,34 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-
+import { TabContext } from "@mui/lab";
+import { Container, Grid } from "@mui/material";
+import { useState } from "react";
+import { DetailsTab } from "./components/DetailsTab";
+import { FullWidthTabPanel } from "./components/FullWidthTabPanel";
+import { Header } from "./components/Header";
+import { Posts } from "./components/Posts";
+import { Users } from "./components/Users";
 function App() {
-  const [count, setCount] = useState(0)
+  const [display, setDisplay] = useState("user");
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  function handleChangeDisplay(
+    _event: React.MouseEvent<HTMLElement>,
+    value: string | null
+  ) {
+    if (value !== null) {
+      setDisplay(value);
+    }
+  }
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <Container maxWidth="xl">
+      <Header onChangeDisplay={handleChangeDisplay} value={display} />
+      <TabContext value={display}>
+        <Grid container>
+          <Grid item xs={12}>
+            <FullWidthTabPanel value="user">
+              <Users />
+            </FullWidthTabPanel>
+          </Grid>
+          <Grid item xs={12}>
+            <FullWidthTabPanel value="post">
+              <Posts />
+            </FullWidthTabPanel>
+          </Grid>
+        </Grid>
+      </TabContext>
+      <Grid container>
+        <Grid item xs={12}>
+          <DetailsTab selectedIds={selectedIds} />
+        </Grid>
+      </Grid>
+    </Container>
+  );
 }
 
-export default App
+export default App;
