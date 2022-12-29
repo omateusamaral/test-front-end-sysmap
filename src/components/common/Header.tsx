@@ -27,13 +27,13 @@ export function Header({ onChangeDisplay, value }: HeaderProps) {
       <Grid item xs={6} mt={4}>
         <ToggleButtonGroup value={value} exclusive onChange={onChangeDisplay}>
           <Tooltip title="List of users">
-            <ToggleButton value="user">
+            <ToggleButton value="user" data-testid="ListOfUsersButton">
               <PersonRoundedIcon />
             </ToggleButton>
           </Tooltip>
 
           <Tooltip title="List of posts">
-            <ToggleButton value="post">
+            <ToggleButton value="post" data-testid="ListOfPostsButton">
               <ChatRoundedIcon />
             </ToggleButton>
           </Tooltip>

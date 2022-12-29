@@ -21,7 +21,7 @@ export default function UserSection({ selectedId }: UserSectionProps) {
     getUserCallback.execute(selectedId);
   }, [selectedId]);
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} data-testid="UserSectionCard">
       <CardMedia sx={{ height: 200 }} image={image} title="green iguana" />
       {getUserCallback.loading ? (
         <Grid container>

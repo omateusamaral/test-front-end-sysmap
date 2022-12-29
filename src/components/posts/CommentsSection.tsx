@@ -29,6 +29,7 @@ export function CommentsSection({ selectedId }: CommentsSectionProps) {
         overflow: "auto",
         "& ul": { padding: 0 },
       }}
+      data-testid="commentsSection"
     >
       <Grid container>
         <Grid item xs={12}>
