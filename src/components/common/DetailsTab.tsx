@@ -2,7 +2,7 @@ import { TabContext, TabList } from "@mui/lab";
 import { Box, Tab } from "@mui/material";
 import { useEffect, useState } from "react";
 import { CommentsSection } from "../posts/CommentsSection";
-import UserExtraInformation from "../users/UserExtraInfomartion";
+import UserExtraInformation from "../users/UserSection";
 import { FullWidthTabPanel } from "./FullWidthTabPanel";
 import { PleaseSelectOne } from "./PleaseSelectOne";
 export interface DetailsTabProps {

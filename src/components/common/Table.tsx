@@ -13,7 +13,7 @@ export function Table({ rows, columns, loading, setSelectedIds }: TableProps) {
         rows={rows}
         columns={columns}
         pageSize={20}
-        rowsPerPageOptions={[5]}
+        rowsPerPageOptions={[20]}
         getRowId={(row) => row.id}
         checkboxSelection
         loading={loading}

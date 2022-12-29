@@ -11,12 +11,10 @@ import { getUser } from "../../api";
 import image from "../../assets/spider.jpg";
 import { ErrorDialog } from "../common/ErrorDialog";
 
-interface UserExtraInformationProps {
+interface UserSectionProps {
   selectedId: string;
 }
-export default function UserExtraInformation({
-  selectedId,
-}: UserExtraInformationProps) {
+export default function UserSection({ selectedId }: UserSectionProps) {
   const getUserCallback = useAsyncCallback(getUser);
 
   useEffect(() => {
