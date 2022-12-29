@@ -41,7 +41,7 @@ export interface Comment {
   email: string;
   body: string;
 }
-function create() {
+function createInstance() {
   return axios.create({
     baseURL: "https://jsonplaceholder.typicode.com",
     timeout: 4000,
@@ -50,7 +50,7 @@ function create() {
 
 export async function listUsers(): Promise<User[]> {
   try {
-    const instance = create();
+    const instance = createInstance();
     const response = await instance.get("/users");
     return response.data;
   } catch (error) {
@@ -61,7 +61,7 @@ export async function listUsers(): Promise<User[]> {
 
 export async function getUser(userId: string): Promise<User> {
   try {
-    const instance = create();
+    const instance = createInstance();
     const response = await instance.get(`/users/${userId}`);
     return response.data;
   } catch (error) {
@@ -72,7 +72,7 @@ export async function getUser(userId: string): Promise<User> {
 
 export async function listPosts(): Promise<Post[]> {
   try {
-    const instance = create();
+    const instance = createInstance();
     const response = await instance.get("/posts");
     return response.data;
   } catch (error) {
@@ -83,7 +83,7 @@ export async function listPosts(): Promise<Post[]> {
 
 export async function listComments(postId: string): Promise<Comment[]> {
   try {
-    const instance = create();
+    const instance = createInstance();
     const response = await instance.get(`posts/${postId}/comments`);
     return response.data;
   } catch (error) {

@@ -50,19 +50,7 @@ export function CommentsSection({ selectedId }: CommentsSectionProps) {
                 </ListItemAvatar>
                 <ListItemText
                   primary={comment.email}
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        sx={{ display: "inline" }}
-                        component="span"
-                        variant="body2"
-                        color="text.primary"
-                      >
-                        {comment.name}
-                      </Typography>
-                      {comment.body}
-                    </React.Fragment>
-                  }
+                  secondary={<React.Fragment>{comment.body}</React.Fragment>}
                 />
               </ListItem>
             ))}

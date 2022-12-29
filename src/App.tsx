@@ -21,6 +21,7 @@ function App() {
   ) {
     if (value !== null) {
       setDisplay(value);
+      setSelectedIds([]);
     }
   }
 

@@ -4,6 +4,7 @@ import {
   Grid,
   ToggleButton,
   ToggleButtonGroup,
+  Tooltip,
   Typography,
 } from "@mui/material";
 
@@ -25,13 +26,17 @@ export function Header({ onChangeDisplay, value }: HeaderProps) {
       </Grid>
       <Grid item xs={6} mt={4}>
         <ToggleButtonGroup value={value} exclusive onChange={onChangeDisplay}>
-          <ToggleButton value="user">
-            <PersonRoundedIcon />
-          </ToggleButton>
+          <Tooltip title="List of users">
+            <ToggleButton value="user">
+              <PersonRoundedIcon />
+            </ToggleButton>
+          </Tooltip>
 
-          <ToggleButton value="post">
-            <ChatRoundedIcon />
-          </ToggleButton>
+          <Tooltip title="List of posts">
+            <ToggleButton value="post">
+              <ChatRoundedIcon />
+            </ToggleButton>
+          </Tooltip>
         </ToggleButtonGroup>
       </Grid>
     </Grid>
