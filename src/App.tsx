@@ -3,12 +3,12 @@ import { Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useAsyncCallback } from "react-async-hook";
 import { listUsers } from "./api";
+import { DetailsTab } from "./components/common/DetailsTab";
 import { ErrorDialog } from "./components/common/ErrorDialog";
-import { DetailsTab } from "./components/DetailsTab";
-import { FullWidthTabPanel } from "./components/FullWidthTabPanel";
-import { Header } from "./components/Header";
-import { Posts } from "./components/Posts";
-import { Users } from "./components/Users";
+import { FullWidthTabPanel } from "./components/common/FullWidthTabPanel";
+import { Header } from "./components/common/Header";
+import { Posts } from "./components/posts/Posts";
+import { Users } from "./components/users/Users";
 function App() {
   const [display, setDisplay] = useState("user");
   const [selectedIds, setSelectedIds] = useState<string[]>([]);

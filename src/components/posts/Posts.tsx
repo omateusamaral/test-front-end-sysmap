@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import { Table } from "./Table";
+import { Table } from "../common/Table";
 
 export function Posts() {
   return (
@@ -10,7 +10,7 @@ export function Posts() {
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Table rows={[]} columns={[]} />
+        <Table rows={[]} columns={[]} setSelectedIds={() => []} />
       </Grid>
     </Grid>
   );

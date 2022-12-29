@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import { GridColDef } from "@mui/x-data-grid";
-import { User } from "../api";
-import { Table } from "./Table";
+import { User } from "../../api";
+import { Table } from "../common/Table";
 
 interface UsersProps {
   data: User[] | undefined;

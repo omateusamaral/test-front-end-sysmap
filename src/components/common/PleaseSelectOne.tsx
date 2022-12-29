@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 
 interface PleaseSelectOneProps {
-  value: string;
+  value?: string;
 }
 export function PleaseSelectOne({ value }: PleaseSelectOneProps) {
   return (
@@ -13,7 +13,10 @@ export function PleaseSelectOne({ value }: PleaseSelectOneProps) {
         justifyContent="center"
         alignItems="center"
       >
-        <Typography variant="body1"> Please select one {value}</Typography>
+        <Typography variant="body1">
+          {" "}
+          Please select one {value ?? ""}
+        </Typography>
       </Grid>
     </Grid>
   );

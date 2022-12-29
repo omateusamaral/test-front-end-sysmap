@@ -5,7 +5,10 @@ export interface User {
   name: string;
   username: string;
   email: string;
+  phone: string;
+  website: string;
   address: Address;
+  company: Company;
 }
 export interface Address {
   street: string;
@@ -17,6 +20,11 @@ export interface Address {
 export interface Geo {
   lat: string;
   lng: string;
+}
+export interface Company {
+  name: string;
+  catchPhrase: string;
+  bs: string;
 }
 
 function create() {
